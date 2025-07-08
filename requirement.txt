@@ -1,0 +1,8 @@
+flask
+pytesseract
+easyocr
+pillow
+scikit-learn
+numpy
+pandas
+shap
