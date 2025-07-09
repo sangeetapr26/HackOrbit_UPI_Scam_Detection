@@ -50,15 +50,15 @@ upi_scam_detector/
 
 The project is organized into several Python modules and a Flask web application:
 
-1. REQUIREMENT.TXT: Lists all necessary Python dependencies.
-2. OCR.py: Handles Optical Character Recognition (OCR) to extract text from images and QR code data.
-3. SCAM_CLASSIFIER.py: Contains the logic for loading the NLP text classification model and detecting scam indicators.
-4. UTILS.py: Defines a dictionary of SCAM_KEYWORDS with associated risk scores and a function to detect these keywords in text.
-5. RISK_ASSESSMENT.py: Implements the core risk assessment logic, blending keyword scores and AI-generated scam probabilities.
-6. APP.py: The main Flask application that handles web requests, file uploads, text processing, and rendering of results.
-7. INDEX.html: The front-end HTML template for the web interface, allowing users to upload screenshots or paste messages.
-8. SCRIPT.js: Frontend JavaScript for basic form handling and user experience improvements.
-19. static/style.css: (Implied) Custom CSS for styling the web application.
+1. requirements.txt: Lists all necessary Python dependencies.
+2. ocr.py: Handles Optical Character Recognition (OCR) to extract text from images and QR code data.
+3. scam_classifier.py: Contains the logic for loading the NLP text classification model and detecting scam indicators.
+4. utils.py: Defines a dictionary of SCAM_KEYWORDS with associated risk scores and a function to detect these keywords in text.
+5. risk_assesment.py: Implements the core risk assessment logic, blending keyword scores and AI-generated scam probabilities.
+6. app.py: The main Flask application that handles web requests, file uploads, text processing, and rendering of results.
+7. indec.html: The front-end HTML template for the web interface, allowing users to upload screenshots or paste messages.
+8. script.js: Frontend JavaScript for basic form handling and user experience improvements.
+9. static/style.css: (Implied) Custom CSS for styling the web application.
 
 Setup and Installation:
 To set up and run the UPI Scam Detector, follow these steps:
