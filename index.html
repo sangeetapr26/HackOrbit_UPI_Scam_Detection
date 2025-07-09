@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UPI Scam Detector</title>
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='static/style.css') }}">
+
+  <!-- Bootstrap 5 CDN for modern UI -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+
+    <!-- Title -->
+    <div class="text-center mb-4">
+      <h1 class="text-primary">🛡️ UPI Scam Detector</h1>
+      <p class="text-muted">Upload a UPI transaction screenshot or paste a suspicious message to detect scams.</p>
+    </div>
+
+    <!-- Form -->
+    <form method="POST" enctype="multipart/form-data" class="bg-white p-4 rounded shadow-sm">
+      <div class="mb-3">
+        <label for="screenshot" class="form-label">Upload Screenshot</label>
+        <input type="file" name="screenshot" id="screenshot" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Or Paste Message</label>
+        <textarea name="message" id="message" rows="5" class="form-control" placeholder="Paste suspicious text..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Analyze</button>
+    </form>
+
+    <!-- Results -->
+    {% if result %}
+    <div class="mt-5 p-4 bg-white border-start border-5 border-danger shadow-sm">
+      <h3 class="text-dark mb-3">📊 Analysis Results</h3>
+
+      <p><strong>🚨 Scam Score:</strong> {{ result.scam_score }}%</p>
+      <p><strong>📋 Suggestion:</strong> {{ result.suggestion }}</p>
+      <p><strong>⚠️ Flags Detected:</strong> {{ result.red_flags | join(', ') }}</p>
+
+      <hr>
+      <h5 class="mt-4">🧾 Extracted Text</h5>
+      <pre class="bg-light p-3 rounded">{{ extracted_text }}</pre>
+    </div>
+    {% endif %}
+
+  </div>
+
+  <!-- Optional JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
